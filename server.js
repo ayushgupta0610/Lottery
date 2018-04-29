@@ -2,11 +2,16 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('Return JSON or HTML View');
+  res.send('Lottery app is temporarily unavailable.');
 });
 
 app.get('/revoke/:uin/:agencyID', function(req, res) {
-	res.send(`{"uin": ${req.params.uin},"agencyID": ${req.params.agencyID}}`);
+	let result = {
+		'uin': req.params.uin,
+		'agencyID': req.params.agencyID
+	}
+	let resJson = JSON.stringify(result);
+	res.send(resJson);
 	 
 //	res.send({ "some": "json" });
 //	res.send(404, 'No params here');
