@@ -21,7 +21,7 @@ app.get('/revoke/:uin/:agencyID', function(req, res) {
 
 app.get('/announceWinner/:program/:roundNo', function(req, res) {
 	let result = {
-		'programNameAndRound': req.params.program + req.params.roundNo
+		'programNameAndRound': req.params.program + "+" + req.params.roundNo
 		// 'roundNo': req.params.roundNo
 	}
 	let resJson = JSON.stringify(result);
